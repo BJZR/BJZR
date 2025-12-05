@@ -1,5 +1,5 @@
-## Hi there 👋
-
+## Hola!! 👋, soy Brayan Zambrano (BJZR)
+un chicho que le gusta todo lo refente a la tecnologia y al desarrollo de sotfware.. 🧑🏻‍💻
 <!--
 **BJZR/BJZR** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
