@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bjzr.github.io/BJZR/sitemap.xml
+
