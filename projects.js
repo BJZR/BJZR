@@ -3,6 +3,7 @@
   if (!GRID) return;
 
   var EXCLUDED = ["BJZR", "sst", "latrode", "opencode"];
+  var FEATURED = ["B_lang", "Taller-Elvis"];
 
   function escapeHTML(str) {
     return String(str).replace(/[&<>"']/g, function (c) {
@@ -28,13 +29,14 @@
   function card(repo) {
     var lang = repo.language || "Otro";
     var star = repo.stargazers_count || 0;
+    var featured = FEATURED.indexOf(repo.name) !== -1;
     var chips = '<span class="chips"><mark>' + escapeHTML(lang) + "</mark>";
     if (star) chips += "<mark>⭐ " + star + "</mark>";
     chips += "</span>";
     var updated = fmtDate(repo.pushed_at);
     return (
-      '<card>' + preview(repo) +
-      '<h3>' + escapeHTML(repo.name) + "</h3>" +
+      '<card class="' + (featured ? "destacado" : "") + '">' + preview(repo) +
+      "<h3>" + escapeHTML(repo.name) + (featured ? ' <span class="badge">destacado</span>' : "") + "</h3>" +
       "<p>" + (repo.description ? escapeHTML(repo.description) : "Sin descripción") + "</p>" +
       "<p>" + chips + "</p>" +
       '<p class="text-sm muted">' + (updated ? "actualizado: " + updated : "") + "</p>" +
@@ -46,7 +48,14 @@
   function render(repos) {
     var list = repos
       .filter(function (r) { return !EXCLUDED.includes(r.name) && !r.fork; })
-      .sort(function (a, b) { return new Date(b.pushed_at) - new Date(a.pushed_at); });
+      .sort(function (a, b) {
+        var ai = FEATURED.indexOf(a.name);
+        var bi = FEATURED.indexOf(b.name);
+        if (ai !== -1 && bi !== -1) return ai - bi;
+        if (ai !== -1) return -1;
+        if (bi !== -1) return 1;
+        return new Date(b.pushed_at) - new Date(a.pushed_at);
+      });
     if (!list.length) throw new Error("sin repositorios");
     GRID.innerHTML = list.map(card).join("");
   }

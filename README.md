@@ -11,8 +11,8 @@ Desarrollador de escritorio, web y UI/UX. Me gusta todo lo relacionado con la te
 
 ## 📦 Proyectos destacados
 
-- **Juego de compuestos químicos** — [Compuesto-X](https://github.com/BJZR/Compuesto-X)
-  Adivina el compuesto a partir de su estructura y elementos químicos.
+- **B_lang** — [B_lang](https://github.com/BJZR/B_lang)
+  Lenguaje compilable (beta) a ensamblador x86_64 para Linux.
 
 - **Taller Elvis** — [Taller-Elvis](https://github.com/BJZR/Taller-Elvis)
   Landing page de un taller mecánico con servicios de reparación y mantenimiento.

@@ -181,6 +181,25 @@ card {
   object-fit: cover;
 }
 
+/* Proyectos destacados */
+card.destacado {
+  border-color: var(--accent);
+  box-shadow: 0 2px 4px var(--shadow), 0 0 0 1px var(--accent);
+}
+
+.badge {
+  display: inline-block;
+  margin-left: 0.4em;
+  padding: 0.05em 0.45em;
+  border: 1px solid var(--accent);
+  border-radius: 2px;
+  color: var(--accent);
+  background: var(--mark-bg);
+  font-size: 0.7em;
+  font-weight: 500;
+  vertical-align: middle;
+}
+
 card .chips {
   line-height: 2;
 }
