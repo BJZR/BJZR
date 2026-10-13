@@ -1,22 +1,49 @@
-## Hola, soy Brayan Zambrano (BJZR)
+# Hola, soy Brayan Zambrano (BJZR)
 
-Desarrollador de escritorio, web y UI/UX. Me gusta todo lo relacionado con la tecnología y el desarrollo de software: casi 3 años construyendo plataformas web escalables y de alto rendimiento, desde la interfaz de usuario hasta la arquitectura.
+Desarrollador de software enfocado en **sistemas, herramientas CLI y desarrollo web**. Me gusta crear software ligero, directo y funcional.
+
+---
 
 ## 🛠️ Tecnologías
 
 | Área | Tecnologías |
 | --- | --- |
-| Web | HTML5 · CSS3 · JavaScript |
-| Lenguajes | Go · Python · C |
+| **Lenguajes** | C · Go · Python · JavaScript · Java · Lua |
+| **Web** | HTML5 · CSS3 · Web APIs |
+| **Herramientas** | Linux · Shell (Bash) · Neovim · Git |
 
-## 📦 Proyectos destacados
+---
 
-- **B_lang** — [B_lang](https://github.com/BJZR/B_lang)
-  Lenguaje compilable (beta) a ensamblador x86_64 para Linux.
+## 📦 Proyectos
 
-- **Taller Elvis** — [Taller-Elvis](https://github.com/BJZR/Taller-Elvis)
-  Landing page de un taller mecánico con servicios de reparación y mantenimiento.
+### Lenguajes y Compiladores
+- **[B_lang](https://github.com/BJZR/B_lang)** — Lenguaje compilable (beta) a ensamblador x86_64 para Linux.
+- **[MLang](https://github.com/BJZR/MLang)** — Compilador minimalista para Linux x86_64.
+- **[transpilador-c](https://github.com/BJZR/transpilador-c)** — Transpilador de sintaxis personalizada a C.
+
+### Sistemas y Linux
+- **[ryf](https://github.com/BJZR/ryf)** — Shell minimalista en Go.
+- **[wmp](https://github.com/BJZR/wmp)** — Gestor de ventanas ligero basado en DWM y BSPWM.
+- **[MinDE](https://github.com/BJZR/MinDE)** — Entorno de escritorio minimalista para Linux.
+
+### Herramientas CLI
+- **[blaze](https://github.com/BJZR/blaze)** — Sistema de compilación minimalista alternativo a Make.
+- **[snap](https://github.com/BJZR/snap)** — Control de versiones local liviano.
+- **[treegen](https://github.com/BJZR/treegen)** — Generador de estructuras de carpetas a partir de esquemas de texto.
+
+### Web y Otros
+- **[Taller-Elvis](https://github.com/BJZR/Taller-Elvis)** — Landing page para un taller mecánico.
+- **[imagen_ascii](https://github.com/BJZR/imagen_ascii)** — Conversor web de imágenes a arte ASCII.
+- **[ToolsWebX](https://github.com/BJZR/ToolsWebX)** — Colección de utilidades web.
+
+---
+
+## 🌐 Portafolio
+
+Portafolio web: **[https://bjzr.github.io/BJZR/](https://bjzr.github.io/BJZR/)**
+
+---
 
 ## 📫 Contacto
 
-- GitHub: [github.com/BJZR](https://github.com/BJZR)
+- GitHub: [@BJZR](https://github.com/BJZR)
