@@ -12,40 +12,40 @@
   var currentLang = "Todos";
 
   var DESCRIPTIONS_MAP = {
-    "B_lang": "Lenguaje de programación compilable (beta) a ensamblador x86_64 para sistemas Linux.",
-    "Taller-Elvis": "Sitio web profesional para taller mecánico con catálogo de servicios de reparación y mantenimiento.",
-    "ryf": "Shell minimalista y eficiente desarrollado en Go para entornos Unix.",
-    "parrot.vscode": "Extensión para Visual Studio Code con soporte de resaltado de sintaxis para el lenguaje Parrot.",
-    "appimg": "Herramienta CLI para gestión y empaquetado simplificado de aplicaciones AppImage.",
-    "parrot.nvim": "Plugin de Neovim para resaltado de sintaxis e integración del lenguaje Parrot.",
-    "Compuesto-X": "Juego interactivo y educativo enfocado en conceptos de química general.",
-    "MinDE": "Entorno de escritorio (Desktop Environment) minimalista y ligero para Linux.",
-    "Programacion_orientada_a_objetos": "Colección de ejercicios y proyectos prácticos sobre Programación Orientada a Objetos en Java.",
-    "publicidad_gamer": "Landing page interactiva orientada al sector publicitario y cultura gamer.",
-    "Biblioteca": "Sistema de gestión e inventario para bibliotecas desarrollado en Java.",
-    "scripts-linux": "Colección de scripts en Bash para automatización de tareas y optimización en sistemas Linux.",
-    "idw": "Entorno de diseño web interactivo para prototipado rápido en el navegador.",
-    "dwv": "Herramienta visual de maquetación e inspección para desarrollo web.",
-    "MLang": "Compilador minimalista para un lenguaje de programación orientado a arquitectura Linux x86_64.",
-    "docs": "Generador automático de documentación a partir de comentarios estructurados en código C.",
-    "pack": "Herramienta de compresión de archivos optimizada para código fuente (.c, .h).",
-    "watch": "Utilidad de monitoreo continuo en terminal sin dependencias externas.",
-    "snap": "Sistema de control de versiones local y ultra-rápido para flujos de trabajo simplificados.",
-    "blaze": "Sistema de automatización de compilación (Build Tool) minimalista alternativo a Make.",
-    "void.nvim": "Tema de colores para Neovim inspirado en la estética visual de Void Linux.",
-    "imagen_ascii": "Aplicación web para conversión de imágenes a arte ASCII con opciones de exportación.",
-    "ToolsWebX": "Suite de utilidades web integradas para acelerar el flujo de desarrollo frontend.",
-    "void-bspwm": "Script de instalación y configuración completa para entorno BSPWM en Void Linux.",
-    "pyorganizador": "Utilidad en Python para clasificar y organizar archivos automáticamente según su tipo.",
-    "cc-modificado": "Modificación y extensión del compilador de C original desarrollado por lolzdev.",
-    "MD": "Editor y previsualizador minimalista de documentos Markdown en el navegador.",
-    "transpilador-c": "Transpilador escrito en C que procesa sintaxis personalizada hacia código C estándar.",
-    "treegen": "Herramienta CLI en C que genera estructuras de proyectos a partir de esquemas de texto.",
-    "Config_bspwm": "Configuración modular de BSPWM con Lemonbar, Rofi, Dunst y Picom.",
-    "superc": "Biblioteca en C que ofrece macros y utilidades para una sintaxis sintética y expresiva.",
-    "carroselwm": "Gestor de ventanas para X11 enfocado en una distribución tipo carrusel horizontal.",
-    "pwa-c": "Herramienta CLI para creación y administración de Progressive Web Applications (PWA).",
-    "wmp": "Gestor de ventanas ultraligero e híbrido basado en la arquitectura de DWM y BSPWM."
+    "B_lang": "Lenguaje de programación compilable (beta) a ensamblador x86_64 para Linux.",
+    "Taller-Elvis": "Landing page para taller mecánico con servicios de reparación y mantenimiento.",
+    "ryf": "Shell minimalista en Go.",
+    "parrot.vscode": "Extensión de VS Code para el lenguaje Parrot.",
+    "appimg": "Gestor de paquetes y herramientas AppImage.",
+    "parrot.nvim": "Resaltador de sintaxis del lenguaje Parrot para Neovim.",
+    "Compuesto-X": "Juego interactivo sobre química.",
+    "MinDE": "Entorno gráfico de escritorio minimalista.",
+    "Programacion_orientada_a_objetos": "Ejercicios y prácticas de programación orientada a objetos en Java.",
+    "publicidad_gamer": "Página web de publicidad orientada a videojuegos.",
+    "Biblioteca": "Sistema de gestión de biblioteca en Java.",
+    "scripts-linux": "Colección de scripts útiles para Linux.",
+    "idw": "Herramienta de diseño web interactivo.",
+    "dwv": "Herramienta visual de diseño web.",
+    "MLang": "Compilador minimalista para Linux x86_64.",
+    "docs": "Generador de documentación desde comentarios en código.",
+    "pack": "Compresor de archivos especializado en código fuente .c y .h.",
+    "watch": "Utilidad CLI de monitoreo continuo.",
+    "snap": "Git minimalista local para rapidez y sencillez.",
+    "blaze": "Make minimalista para proyectos pequeños.",
+    "void.nvim": "Tema para Neovim basado en los colores de Void Linux.",
+    "imagen_ascii": "Convertidor de imágenes a arte ASCII en HTML.",
+    "ToolsWebX": "Colección de herramientas web.",
+    "void-bspwm": "Script de instalación y configuración de bspwm para Void Linux.",
+    "pyorganizador": "Script en Python para organizar archivos automáticamente.",
+    "cc-modificado": "Modificación del compilador C original de lolzdev.",
+    "MD": "Editor simple de Markdown en HTML.",
+    "transpilador-c": "Transpilador escrito en C que convierte sintaxis personalizada a C estándar.",
+    "treegen": "Generador de estructuras de carpetas a partir de esquemas de texto.",
+    "Config_bspwm": "Configuración de bspwm con lemonbar, rofi, dunst y picom.",
+    "superc": "Librería en C para facilitar la sintaxis del lenguaje.",
+    "carroselwm": "Gestor de ventanas minimalista con navegación tipo carrusel.",
+    "pwa-c": "CLI para crear y administrar aplicaciones web progresivas.",
+    "wmp": "Gestor de ventanas ligero basado en dwm y bspwm."
   };
 
   function escapeHTML(str) {
@@ -77,7 +77,7 @@
     if (repo.description && repo.description.trim() && !repo.description.startsWith("- ")) {
       return repo.description;
     }
-    return "Proyecto de desarrollo alojado en GitHub.";
+    return "Proyecto alojado en GitHub.";
   }
 
   function card(repo) {
@@ -102,7 +102,7 @@
           (updated ? '<p class="text-sm muted">Actualizado: ' + escapeHTML(updated) + '</p>' : '') +
         '</div>' +
         '<div class="card-actions">' +
-          '<a href="' + escapeHTML(repo.html_url) + '" target="_blank" rel="noopener noreferrer"><button>Ver código</button></a>' +
+          '<a href="' + escapeHTML(repo.html_url) + '" target="_blank" rel="noopener noreferrer"><button>código</button></a>' +
         '</div>' +
       '</card>'
     );
@@ -128,7 +128,7 @@
     });
 
     if (!filtered.length) {
-      GRID.innerHTML = '<p class="muted empty-msg">No se encontraron proyectos que coincidan con la búsqueda.</p>';
+      GRID.innerHTML = '<p class="muted empty-msg">No se encontraron proyectos.</p>';
       return;
     }
 
