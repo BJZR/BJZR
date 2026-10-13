@@ -7,6 +7,28 @@
   var EXCLUDED = ["BJZR", "sst", "latrode", "opencode"];
   var FEATURED = ["B_lang", "Taller-Elvis"];
 
+  var PAGES_MAP = {
+    "Taller-Elvis": "https://bjzr.github.io/Taller-Elvis/",
+    "imagen_ascii": "https://bjzr.github.io/imagen_ascii/",
+    "Compuesto-X": "https://bjzr.github.io/Compuesto-X/",
+    "publicidad_gamer": "https://bjzr.github.io/publicidad_gamer/",
+    "idw": "https://bjzr.github.io/idw/",
+    "dwv": "https://bjzr.github.io/dwv/",
+    "ToolsWebX": "https://bjzr.github.io/ToolsWebX/",
+    "MD": "https://bjzr.github.io/MD/"
+  };
+
+  var OPENGRAPH_PREVIEWS = {
+    "Taller-Elvis": "https://opengraph.githubassets.com/1/BJZR/Taller-Elvis",
+    "imagen_ascii": "https://opengraph.githubassets.com/1/BJZR/imagen_ascii",
+    "Compuesto-X": "https://opengraph.githubassets.com/1/BJZR/Compuesto-X",
+    "publicidad_gamer": "https://opengraph.githubassets.com/1/BJZR/publicidad_gamer",
+    "idw": "https://opengraph.githubassets.com/1/BJZR/idw",
+    "dwv": "https://opengraph.githubassets.com/1/BJZR/dwv",
+    "ToolsWebX": "https://opengraph.githubassets.com/1/BJZR/ToolsWebX",
+    "MD": "https://opengraph.githubassets.com/1/BJZR/MD"
+  };
+
   var allRepos = [];
   var currentSearch = "";
   var currentLang = "Todos";
@@ -64,8 +86,20 @@
   }
 
   function preview(repo) {
-    if (repo.social_preview_image_url) {
-      return '<div class="preview"><img src="' + escapeHTML(repo.social_preview_image_url) + '" alt="' + escapeHTML(repo.name) + '" loading="lazy" /></div>';
+    var pageUrl = repo.homepage || PAGES_MAP[repo.name];
+    var imgUrl = OPENGRAPH_PREVIEWS[repo.name] || repo.social_preview_image_url;
+
+    if (!imgUrl && pageUrl) {
+      imgUrl = "https://opengraph.githubassets.com/1/BJZR/" + encodeURIComponent(repo.name);
+    }
+
+    if (imgUrl) {
+      var initial = escapeHTML((repo.name || "?").charAt(0).toUpperCase());
+      return (
+        '<div class="preview">' +
+          '<img src="' + escapeHTML(imgUrl) + '" alt="Captura de ' + escapeHTML(repo.name) + '" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML=\'' + initial + '\';" />' +
+        '</div>'
+      );
     }
     return '<div class="preview" aria-hidden="true">' + escapeHTML((repo.name || "?").charAt(0).toUpperCase()) + '</div>';
   }
@@ -84,11 +118,18 @@
     var lang = repo.language || "Otro";
     var star = repo.stargazers_count || 0;
     var featured = FEATURED.indexOf(repo.name) !== -1;
+    var pageUrl = repo.homepage || PAGES_MAP[repo.name];
+
     var chips = '<span class="chips"><mark>' + escapeHTML(lang) + '</mark>';
     if (star) chips += ' <mark>⭐ ' + star + '</mark>';
     chips += '</span>';
     var updated = fmtDate(repo.pushed_at);
     var description = getRepoDescription(repo);
+
+    var actions = '<a href="' + escapeHTML(repo.html_url) + '" target="_blank" rel="noopener noreferrer"><button>código</button></a>';
+    if (pageUrl) {
+      actions += ' <a href="' + escapeHTML(pageUrl) + '" target="_blank" rel="noopener noreferrer"><button class="demo-btn">Ver demo</button></a>';
+    }
 
     return (
       '<card class="' + (featured ? "destacado" : "") + '">' +
@@ -102,7 +143,7 @@
           (updated ? '<p class="text-sm muted">Actualizado: ' + escapeHTML(updated) + '</p>' : '') +
         '</div>' +
         '<div class="card-actions">' +
-          '<a href="' + escapeHTML(repo.html_url) + '" target="_blank" rel="noopener noreferrer"><button>código</button></a>' +
+          actions +
         '</div>' +
       '</card>'
     );
