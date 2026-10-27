@@ -5,48 +5,66 @@
   padding: 0;
 }
 
-/* Tema adaptativo con CSS moderno (sin media queries) */
+/* Tema adaptativo con CSS moderno */
 :root {
   color-scheme: light dark;
   --bg: light-dark(#ffffff, #0f1115);
-  --text: light-dark(#333333, #e6e6e6);
-  --muted: light-dark(#666666, #9aa0a6);
-  --accent: light-dark(#007acc, #4da3ff);
-  --accent-hover: light-dark(#005999, #3d8bdb);
+  --text: light-dark(#24292f, #e6e6e6);
+  --muted: light-dark(#57606a, #9aa0a6);
+  --accent: light-dark(#0969da, #4da3ff);
+  --accent-hover: light-dark(#0349b4, #3d8bdb);
   --card-bg: light-dark(#ffffff, #16181d);
-  --card-border: light-dark(#eeeeee, #26282e);
-  --divider: light-dark(#eeeeee, #26282e);
-  --shadow: light-dark(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5));
-  --field-border: light-dark(#dddddd, #3a3f47);
-  --mark-bg: light-dark(rgba(0, 122, 204, 0.08), rgba(77, 163, 255, 0.14));
+  --card-border: light-dark(#d0d7de, #26282e);
+  --divider: light-dark(#d0d7de, #26282e);
+  --shadow: light-dark(rgba(140, 149, 159, 0.15), rgba(0, 0, 0, 0.4));
+  --field-border: light-dark(#d0d7de, #3a3f47);
+  --mark-bg: light-dark(rgba(9, 105, 218, 0.08), rgba(77, 163, 255, 0.14));
 }
 
-/* Mejoras para etiquetas HTML5 existentes */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   line-height: 1.6;
   color: var(--text);
   background: var(--bg);
   transition: color 0.2s ease, background 0.2s ease;
+  padding: 2rem 0;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.5em;
   font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: 2.2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
 }
 
 p {
-  margin-bottom: 1em;
+  margin-bottom: 0.8em;
+}
+
+.subtitle {
+  font-size: 1.05rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.bio {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 720px;
 }
 
 a {
   color: var(--accent);
   text-decoration: none;
+  font-weight: 500;
 }
 
 a:hover {
@@ -55,41 +73,46 @@ a:hover {
 
 button {
   background: var(--accent);
-  color: white;
-  border: none;
-  padding: 0.5em 1em;
-  border-radius: 2px;
+  color: #ffffff;
+  border: 1px solid transparent;
+  padding: 0.45em 0.9em;
+  border-radius: 6px;
   cursor: pointer;
-  font-size: 1em;
+  font-size: 0.9em;
+  font-weight: 500;
+  transition: background-color 0.15s ease, transform 0.1s ease;
 }
 
 button:hover {
   background: var(--accent-hover);
 }
 
-input,
-textarea,
-select {
-  border: 1px solid var(--field-border);
-  padding: 0.5em;
-  border-radius: 4px;
-  font-size: 1em;
-  color: var(--text);
-  background: var(--card-bg);
+button:active {
+  transform: translateY(1px);
 }
 
-input:focus,
-textarea:focus,
-select:focus {
+input, textarea, select {
+  border: 1px solid var(--field-border);
+  padding: 0.6em 0.8em;
+  border-radius: 6px;
+  font-size: 0.95em;
+  color: var(--text);
+  background: var(--card-bg);
+  width: 100%;
+}
+
+input:focus, textarea:focus, select:focus {
   outline: none;
   border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--mark-bg);
 }
 
 mark {
   background: var(--mark-bg);
-  padding: 0.2em;
+  padding: 0.15em 0.35em;
+  border-radius: 4px;
   color: var(--accent);
-  font-style: italic;
+  font-weight: 500;
 }
 
 img {
@@ -97,9 +120,43 @@ img {
   height: auto;
 }
 
-/* Etiquetas personalizadas minimalistas */
+/* Layout Controls & Search */
+.controls-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin: 1.2rem 0;
+}
 
-/* <center> - Centrar contenido */
+.filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.filter-btn {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 0.3em 0.8em;
+  font-size: 0.82em;
+  font-weight: 500;
+}
+
+.filter-btn:hover {
+  background: var(--mark-bg);
+  color: var(--accent);
+}
+
+.filter-btn.active {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+}
+
+/* Custom & Minimalist Components */
+
 center {
   display: flex;
   justify-content: center;
@@ -107,71 +164,60 @@ center {
   text-align: center;
 }
 
-/* <left> - Alinear a la izquierda */
-left {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  text-align: left;
-}
-
-/* <right> - Alinear a la derecha */
-right {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  text-align: right;
-}
-
-/* <between> - Espacio entre elementos */
-between {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* <around> - Espacio alrededor de elementos */
-around {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-/* <stack> - Apilar elementos verticalmente */
 stack {
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: 1.2rem;
 }
 
-/* <row> - Elementos en fila */
-row {
-  display: flex;
-  flex-direction: row;
-  gap: 1em;
-}
-
-/* <card> - Tarjeta simple */
 card {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
-  border-radius: 2px;
-  padding: 1.5em;
-  box-shadow: 0 2px 4px var(--shadow);
+  border-radius: 8px;
+  padding: 1.2rem;
+  box-shadow: 0 1px 3px var(--shadow);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
 }
 
-/* Vista previa de proyecto: imagen o tile de inicial */
+card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 12px var(--shadow);
+  transform: translateY(-2px);
+}
+
+card.destacado {
+  border: 1px solid var(--accent);
+  background: light-dark(#f6f8fa, #12151b);
+}
+
+.badge {
+  display: inline-block;
+  margin-left: 0.4em;
+  padding: 0.1em 0.5em;
+  border: 1px solid var(--accent);
+  border-radius: 12px;
+  color: var(--accent);
+  background: var(--mark-bg);
+  font-size: 0.72em;
+  font-weight: 600;
+  vertical-align: middle;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
 .preview {
   display: grid;
   place-items: center;
   aspect-ratio: 16 / 9;
-  margin-bottom: 1em;
-  border-radius: 2px;
+  margin-bottom: 0.8rem;
+  border-radius: 6px;
   background: var(--mark-bg);
   color: var(--accent);
-  font-size: 2em;
-  font-weight: 600;
+  font-size: 2rem;
+  font-weight: 700;
   overflow: hidden;
 }
 
@@ -181,107 +227,66 @@ card {
   object-fit: cover;
 }
 
-/* Proyectos destacados */
-card.destacado {
-  border-color: var(--accent);
-  box-shadow: 0 2px 4px var(--shadow), 0 0 0 1px var(--accent);
+.card-desc {
+  font-size: 0.92rem;
+  color: var(--text);
+  flex-grow: 1;
+  margin-bottom: 1rem;
 }
 
-.badge {
-  display: inline-block;
-  margin-left: 0.4em;
-  padding: 0.05em 0.45em;
-  border: 1px solid var(--accent);
-  border-radius: 2px;
-  color: var(--accent);
-  background: var(--mark-bg);
-  font-size: 0.7em;
-  font-weight: 500;
-  vertical-align: middle;
+.card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: 0.8rem;
 }
 
 card .chips {
-  line-height: 2;
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
 }
 
-/* <grid> - Grid simple */
+.card-actions {
+  margin-top: auto;
+}
+
 grid {
   display: grid;
-  gap: 1em;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.2rem;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
 }
 
-/* <container> - Contenedor con max-width */
 container {
   display: block;
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 0 1em;
+  padding: 0 1.2rem;
 }
 
-/* <spacer> - Espaciador */
 spacer {
   display: block;
-  height: 1em;
+  height: 0.8rem;
 }
 
-/* <divider> - Línea divisoria */
 divider {
   display: block;
   height: 1px;
   background: var(--divider);
-  margin: 1em 0;
+  margin: 0.5rem 0;
 }
 
-/* Clases utilitarias minimalistas */
+/* Utilities */
 .text-sm {
-  font-size: 0.875em;
+  font-size: 0.85rem;
 }
-.text-lg {
-  font-size: 1.25em;
-}
-.text-xl {
-  font-size: 1.5em;
-}
-.bold {
-  font-weight: 600;
-}
+
 .muted {
   color: var(--muted);
 }
-.primary {
-  color: var(--accent);
-}
-.success {
-  color: #28a745;
-}
-.warning {
-  color: #ffc107;
-}
-.danger {
-  color: #dc3545;
-}
-.mb {
-  margin-bottom: 1em;
-}
-.mt {
-  margin-top: 1em;
-}
-.p {
-  padding: 1em;
-}
-.rounded {
-  border-radius: 8px;
-}
 
-.shadow {
-  box-shadow: 0 2px 4px var(--shadow);
-}
-
-.hidden {
-  display: none;
-}
-
-.visible {
-  display: block;
+.empty-msg {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 2rem 0;
 }

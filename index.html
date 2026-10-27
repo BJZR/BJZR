@@ -4,74 +4,86 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="light dark" />
-    <title>BJZR</title>
+    <title>BJZR · Portafolio</title>
     <link rel="icon" href="data:," />
     <link rel="stylesheet" href="minimal.css" />
     <meta name="google-site-verification" content="8HZxoRX1pYuiBEr0dPCFkAChtAzytRro6ZUDn9MN874" />
-    <meta name="description" content="BJZR es un Portafolio de Brayan Zambrano" />
-    <meta property="og:title" content="BJZR – Portafolio de Brayan Zambrano">
-    <meta property="og:description" content="Portafolio de un desarrollador de escritorio y web.">
+    <meta name="description" content="Portafolio de Brayan Zambrano (BJZR). Proyectos de software, herramientas y desarrollo web." />
+    <meta property="og:title" content="BJZR – Portafolio">
+    <meta property="og:description" content="Proyectos de software, herramientas de sistemas y desarrollo web por Brayan Zambrano.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bjzr.github.io/BJZR/">
   </head>
   <body>
     <container>
       <stack>
-        <h1>BJZR</h1>
-
-        <p class="muted">| Desarrollador de escritorio | Desarrollador web | Diseñador UI/UX |</p>
-        <p>
-          Hola, soy <mark>Brayan Zambrano</mark>, un ingeniero de software con
-          casi 3 años de experiencia en la construcción de plataformas web
-          escalables y de alto rendimiento. Mi trabajo abarca ingeniería de
-          interfaz de usuario, herramientas y arquitectura a gran escala, lo que
-          ha moldeado cómo pienso sobre la construcción de sistemas rápidos y
-          resilientes.
-        </p>
-        <divider></divider>
-        <h2>Tecnologías</h2>
-
-        <grid>
-          <card>
-            <h3>HTML5</h3>
-            <p>Lenguaje de marcado para estructurar contenido web.</p>
-          </card>
-
-          <card>
-            <h3>CSS3</h3>
-            <p>Lenguaje de estilos para diseñar y maquetar páginas web.</p>
-          </card>
-
-          <card>
-            <h3>JavaScript</h3>
-            <p>Lenguaje de programación para crear interactividad en la web.</p>
-          </card>
-          <card>
-            <h3>Python</h3>
-            <p>Lenguaje de programación versátil para desarrollo web y más.</p>
-          </card>
-          <card>
-            <h3>C</h3>
-            <p>Lenguaje de programación para funciones críticas o de alto rendimiento.</p>
-          </card>
-          <card>
-            <h3>Go</h3>
-            <p>Lenguaje de programación para servicios y como alternativa moderna a <mark>C</mark>.</p>
-          </card>
-        </grid>
-        <spacer></spacer>
-
-        <h2>Proyectos</h2>
-
-        <grid id="proyectos"></grid>
-
-        <spacer></spacer>
+        <header>
+          <h1>BJZR</h1>
+          <p class="muted subtitle">Desarrollo de escritorio | Desarrollador web | Diseñador UI/UX</p>
+          <p class="bio">
+            Hola, soy <mark>Brayan Zambrano</mark>, un desarrollador con experiencia en la construcción de
+            plataformas web y herramientas de software. Mi trabajo abarca desde proyectos de sistemas y CLI en C/Go
+            hasta interfaces de usuario web.
+          </p>
+        </header>
 
         <divider></divider>
 
-        <center>
-          <p class="muted text-sm">BJZR · 2025</p>
-        </center>
+        <main>
+          <section id="tecnologias">
+            <h2>Tecnologías</h2>
+            <grid class="skills-grid">
+              <card>
+                <h3>HTML5</h3>
+                <p>Lenguaje de marcado para estructurar contenido web.</p>
+              </card>
+              <card>
+                <h3>CSS3</h3>
+                <p>Lenguaje de estilos para diseñar y maquetar páginas web.</p>
+              </card>
+              <card>
+                <h3>JavaScript</h3>
+                <p>Lenguaje de programación para crear interactividad en la web.</p>
+              </card>
+              <card>
+                <h3>Python</h3>
+                <p>Lenguaje de programación versátil para desarrollo web y scripts.</p>
+              </card>
+              <card>
+                <h3>C</h3>
+                <p>Lenguaje de programación para funciones críticas, herramientas y sistemas.</p>
+              </card>
+              <card>
+                <h3>Go</h3>
+                <p>Lenguaje de programación para servicios y alternativas modernas.</p>
+              </card>
+            </grid>
+          </section>
+
+          <spacer></spacer>
+
+          <section id="proyectos-section">
+            <div class="section-header">
+              <h2>Proyectos</h2>
+            </div>
+
+            <div class="controls-bar">
+              <input type="search" id="search-input" placeholder="Buscar proyecto..." aria-label="Buscar proyectos" />
+              <div id="language-filters" class="filter-group" aria-label="Filtros por lenguaje"></div>
+            </div>
+
+            <grid id="proyectos" aria-live="polite"></grid>
+          </section>
+        </main>
+
+        <spacer></spacer>
+        <divider></divider>
+
+        <footer>
+          <center>
+            <p class="muted text-sm">BJZR · 2026 | <a href="https://github.com/BJZR" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+          </center>
+        </footer>
       </stack>
     </container>
     <script src="projects.js"></script>
