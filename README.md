@@ -47,4 +47,4 @@ Portafolio web: **[https://bjzr.github.io/BJZR/](https://bjzr.github.io/BJZR/)**
 ## 📫 Contacto
 
 - GitHub: [@BJZR](https://github.com/BJZR)
-- Gmail : [@BJZR](bjzr.dev@gmail.com)
+- Correo : bjzr.dev@gmail.com
